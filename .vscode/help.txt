@@ -1,0 +1,35 @@
+-----------------------------------------------
+快捷键说明：
+1.tasks.json:Ctrl+Shift+B
+  修改默认task，只需移动task.json中group{}部分，别忘了逗号
+2.launch.json:F5
+  当前仅支持运行Winhost,Qemu由于无法传参运行调整至tasks.json
+-----------------------------------------------
+terminal task(tasks.json)
+所有build日志均默认输出在.vscode文件夹内
+1.Winhost（使用BuildWinhost.bat）
+（1）Winhost：build IA32是默认值，默认快捷键Ctrl+Shift+B
+（2）Winhost x64：对应build x64
+（3）默认build日志对应.log文件，对应BuildWinhost.bat中“-j .vscode\.log”
+（4）build默认EmulatorPkg.dsc，可在BuildWinhost.bat修改，对应“-p EmulatorPkg\EmulatorPkg.dsc”
+2.Qemu
+（1）Qemu（build）：使用BuildQemu.bat，日志对应.log文件
+（2）Qemu（run）：使用Qemu.bat，日志对应serial.log，文件系统fat，权限rw，虚拟盘位置fat
+（3）Qemu（build and run）：顺序执行build和run
+（4）Qemu.bat运行时，可能无法找到对应qemu.exe，建议使用qemu安装路径
+3.Others
+（1）Guid：对应Guid.bat，用于生成新的Guid
+（2）BuildClean：删除Build文件夹，需要二次确认
+-----------------------------------------------
+run and debug(launch.json)
+1.Winhost:启动IA32环境下编译的Winhost.exe
+2.Winhost x64:启动x64环境下编译的Winhost.exe
+3.Qemu：启动qemu（未实装）
+-----------------------------------------------
+Others
+1.vscode插件
+（1）必选：c/c++
+（2）推荐：edk2-vscode,BIOS-CAT
+（3）可选：Hex Editor,byo相关插件
+2.tasks.json若出现problemMatcher部分，请删除或自行配置
+3.请自行检查脚本中的路径和编译的dsc，后续版本不会对其修改

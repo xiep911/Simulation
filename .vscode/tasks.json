@@ -1,0 +1,66 @@
+{
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "Winhost",
+      "command": "BuildWinhost.bat -a IA32",
+      "options": {
+        "cwd": "${workspaceRoot}/.vscode"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "type": "shell",
+      "label": "Winhost x64",
+      "command": "BuildWinhost.bat -a X64",
+      "options": {
+        "cwd": "${workspaceRoot}/.vscode"
+      }
+    },
+    {
+      "label": "Qemu (Build and Run)",
+      "dependsOn": [
+        "Qemu (build)",
+        "Qemu (run)"
+      ],
+      "dependsOrder": "sequence",
+      "group": "build"
+    },
+    {
+      "type": "shell",
+      "label": "Qemu (build)",
+      "command": "BuildQemu.bat",
+      "options": {
+        "cwd": "${workspaceRoot}/.vscode"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "Qemu (run)",
+      "command": "Qemu.bat",
+      "options": {
+        "cwd": "${workspaceRoot}/.vscode"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "Guid",
+      "command": "Guid.bat",
+      "options": {
+        "cwd": "${workspaceRoot}/.vscode"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "BuildClean",
+      "command": "echo Delete Build&rmdir /s build",
+      "options": {
+        "cwd": "${workspaceRoot}"
+      }
+    }
+  ],
+  "version": "2.0.0"
+}

@@ -1,0 +1,24 @@
+{
+  // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Winhost",
+      "type": "cppvsdbg",
+      "request": "launch",
+      //"preLaunchTask": "Winhost IA32",
+      "program": "WinHost.exe",
+      "console":"newExternalWindow",
+      "cwd": "${workspaceRoot}/Build/EmulatorIA32/DEBUG_VS2015x86/IA32/",
+    },
+    {
+      "name": "Winhost x64",
+      "type": "cppvsdbg",
+      "request": "launch",
+      //"preLaunchTask": "Winhost x64",
+      "program": "WinHost.exe",
+      "console":"newExternalWindow",
+      "cwd": "${workspaceRoot}/Build/EmulatorX64/DEBUG_VS2015x86/X64/",
+    }
+  ]
+}
