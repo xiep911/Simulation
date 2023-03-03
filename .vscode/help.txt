@@ -3,7 +3,8 @@
 1.tasks.json:Ctrl+Shift+B
   修改默认task，只需移动task.json中group{}部分，别忘了逗号
 2.launch.json:F5
-  当前仅支持运行Winhost,Qemu由于无法传参运行调整至tasks.json
+  当前仅支持运行Winhost，Qemu由于无法传参运行调整至tasks.json
+  修改默认启动，修改VSCODE左侧运行和调试功能中的task名称
 -----------------------------------------------
 terminal task(tasks.json)
 所有build日志均默认输出在.vscode文件夹内
@@ -24,7 +25,7 @@ terminal task(tasks.json)
 run and debug(launch.json)
 1.Winhost:启动IA32环境下编译的Winhost.exe
 2.Winhost x64:启动x64环境下编译的Winhost.exe
-3.Qemu：启动qemu（未实装）
+3.Qemu：启动qemu（调整至tasks.json）
 -----------------------------------------------
 Others
 1.vscode插件

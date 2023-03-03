@@ -32,6 +32,7 @@
     {
       "type": "shell",
       "label": "Qemu (build)",
+      // 根据需要再command后面加"-DDEBUG_SERIAL_PORT"
       "command": "BuildQemu.bat",
       "options": {
         "cwd": "${workspaceRoot}/.vscode"
@@ -40,7 +41,10 @@
     {
       "type": "shell",
       "label": "Qemu (run)",
-      "command": "Qemu.bat",
+      // 根据需要在command后面添加命令, serial 的参数可使用串口
+      // 1. -hdb fat:rw:fat : 使用fat文件夹作为虚拟盘, 文件系统fat，权限rw
+      // 2. -nic none : qemu 默认添加一个网卡, 使用此命令不添加网卡
+      "command": "Qemu.bat -serial file:serial.log",
       "options": {
         "cwd": "${workspaceRoot}/.vscode"
       }
